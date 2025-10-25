@@ -22,8 +22,17 @@
         }
       }
 
+      function handleClick() {
+        setClicks(clicks + 1);
+      }
+
       function HomePage() {
         const names = ["Anakin Skywalker", "Ahsoka Tano", "Ezra Bridger"];
+        const [clicks, setClicks] = React.useState(0);
+
+        function handleClick() {
+          setClicks(clicks + 1);
+        }
 
         return (
           <div>
@@ -33,7 +42,7 @@
                 <li key={name}>{name}</li>
               ))}
             </ul>
-            <Header title="React with reusable titles" />
+            <button onClick={handleClick}>Click me! ({clicks})</button>
           </div>
         );
       }
